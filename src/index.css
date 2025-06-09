@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap");
+
+
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  /* font-family: 'Inter', sans-serif; Replace with ETNA if installed locally */
+  font-family: "Baloo 2", cursive;
+}
