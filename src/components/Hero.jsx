@@ -30,7 +30,7 @@ const Hero = () => {
           transition={{ delay: 1, duration: 0.8 }}
         >
           I'm <span className="font-semibold">Suprim Bhattarai</span> — wanna be
-          IT Professional, trying to be a good human being.
+          IT Professional, trying to be my name.
         </motion.p>
         <motion.a
           href="https://drive.google.com/file/d/1lQwguTP3AGCqxSMtBCe61cjV-0ylb50o/view?usp=sharing"
