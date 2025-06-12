@@ -33,7 +33,7 @@ const Hero = () => {
           IT Professional, trying to be my name.
         </motion.p>
         <motion.a
-          href="https://drive.google.com/file/d/1lQwguTP3AGCqxSMtBCe61cjV-0ylb50o/view?usp=sharing"
+          href="https://drive.google.com/file/d/1fjQAEnbp2Z8YrrREnuPlVSNzZCN6NVQo/view?usp=sharing"
           target="_blank"
           className="inline-block bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-opacity-80 transition duration-300"
           initial={{ scale: 0.8, opacity: 0 }}
