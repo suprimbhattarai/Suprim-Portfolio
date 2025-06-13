@@ -1,29 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Charset, viewport, and browser compatibility -->
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Meta Tags -->
-    <title>Suprim Bhattarai</title>
+    <!-- Title and Description -->
+    <title>Suprim Bhattarai </title>
     <meta
       name="description"
-      content="Portfolio of Suprim Bhattarai, a full stack developer specializing in modern web technologies. Explore projects, skills, and contact info."
+      content="Official portfolio of Suprim Bhattarai, a full stack web developer with expertise in React, Django, and modern web technologies. Check out projects, skills, and contact."
     />
     <meta
       name="keywords"
-      content="Suprim Bhattarai, full stack developer, React, Django, web portfolio, software engineer, JavaScript, MySQL, GitHub"
+      content="Suprim Bhattarai,Portfolio of Full Stack Developer, React, Django, JavaScript, Python, Web Developer, Portfolio, GitHub, Frontend, Backend"
     />
     <meta name="author" content="Suprim Bhattarai" />
+    <link rel="canonical" href="https://www.suprimbhattarai.com.np/" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./src/assets/suprimlogo.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Suprim Bhattarai | Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore the web development portfolio of Suprim Bhattarai. React + Django full stack projects, experience, and contact info."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.suprimbhattarai.com.np/" />
+    <meta property="og:image" content="https://www.suprimbhattarai.com.np/preview.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Suprim Bhattarai | Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Check out Suprim Bhattarai’s portfolio, highlighting skills in modern full stack development using React and Django."
+    />
+    <meta name="twitter:image" content="https://www.suprimbhattarai.com.np/preview.png" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Mobile and Theme Colors -->
+    <meta name="theme-color" content="skyblue" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Suprim Bhattarai" />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Preload Fonts (optional performance tweak) -->
+    <!-- Example: -->
+    <!-- <link rel="preload" href="/fonts/Baloo2-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" /> -->
+
+    <!-- Structured Data with JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Suprim Bhattarai",
+        "url": "https://www.suprimbhattarai.com.np/",
+        "image": "https://www.suprimbhattarai.com.np/preview.png",
+        "jobTitle": "Full Stack Developer",
+        "sameAs": [
+          "https://github.com/suprimbhattarai",
+          "https://www.linkedin.com/in/suprim-bhattarai-494441226/"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        }
+      }
+    </script>
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HZT4SNPGT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-8HZT4SNPGT"); // Replace with your GA4 ID
+    </script>
   </head>
+
   <body>
+    <noscript>
+      <strong>
+        This website works best with JavaScript enabled. Please enable it for full experience.
+      </strong>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="./src/main.jsx"></script>
-
-    <!-- Vite will inject built scripts & styles here automatically -->
   </body>
 </html>
