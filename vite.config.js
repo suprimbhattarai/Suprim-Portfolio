@@ -4,5 +4,17 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/Suprim-Portfolio/',
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        projects: 'src/components/Hero.jsx',
+      },
+      output: {
+        entryFileNames: 'Hero.jsx',
+      },
+    },
+  },
 });
