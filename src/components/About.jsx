@@ -15,7 +15,6 @@ const About = () => {
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
         >
           <h2 className="text-5xl font-bold mb-6">About Me</h2>
           <p className="text-lg leading-relaxed">

@@ -115,7 +115,6 @@ const Projects = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
         >
           <h3 className="text-2xl md:text-2xl font-bold mb-6 text-gray-800">
             Want to visualize your project here?
