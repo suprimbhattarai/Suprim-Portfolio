@@ -46,7 +46,10 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="min-h-screen bg-[#99b4c8] px-6 py-20 overflow-hidden">
+    <section
+      id="projects"
+      className="min-h-screen bg-[#99b4c8] px-6 py-20 overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -40 }}
@@ -58,18 +61,18 @@ const Projects = () => {
           <p className="text-lg">(Basic things I had done)</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-10  justify-items-center">
+        <div className="grid md:grid-cols-2 gap-10 justify-items-center">
           {projectData.map((project, index) => (
             <motion.div
               key={index}
               whileInView={{ opacity: 1, scale: 0.85 }}
               initial={{ opacity: 0, scale: 0.85 }}
               transition={{ duration: 1.2 }}
-              className="relative max-w-md w-full overflow-hidden transform transition-transform duration-300  group cursor-pointer"
+              className="relative max-w-md w-full overflow-hidden transform transition-transform duration-300 group cursor-pointer"
               onClick={() => window.open(project.link, "_blank")}
             >
               {/* Image Carousel */}
-              <div className="relative h-60  w-full">
+              <div className="relative h-60 w-full">
                 <img
                   src={project.images[imageIndexes[index]]}
                   alt={project.name}
@@ -105,6 +108,25 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Add this block below the grid */}
+        <motion.div
+          className="text-center "
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl md:text-2xl font-bold mb-6 text-gray-800">
+            Want to visualize your project here?
+          </h3>
+          <a
+            href="#contact"
+            className="inline-block px-6 py-2 text-black border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+          >
+            Contact Suprim
+          </a>
+        </motion.div>
       </div>
     </section>
   );
