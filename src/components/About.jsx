@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[#99b4c8] px-6 py-16 flex items-center overflow-hidden"
+      className="min-h-screen bg-[#99b4c8] px-8 py-14 flex items-center overflow-hidden"
     >
       <div className="grid md:grid-cols-2 gap-24 max-w-6xl mx-auto items-center w-full">
         {/* Text Block */}

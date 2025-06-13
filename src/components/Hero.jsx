@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen py-52  bg-[#99b4c8] text-black flex flex-col md:flex-row items-center justify-between px-4 sm:px-20 md:px-18 relative overflow-hidden"
+      className="min-h-screen py-44 bg-[#99b4c8] text-black flex flex-col md:flex-row items-center justify-between px-9 sm:px-20 md:px-14 relative overflow-hidden"
     >
       {/* Left Side */}
       <motion.div
@@ -33,7 +33,7 @@ const Hero = () => {
           IT Professional, trying to be my name.
         </motion.p>
         <motion.a
-          href="https://drive.google.com/file/d/1fjQAEnbp2Z8YrrREnuPlVSNzZCN6NVQo/view?usp=sharing"
+          href="https://drive.google.com/file/d/156A3BHOxGn57Ox1TTvK_22ue4nPW0GJI/view?usp=sharing"
           target="_blank"
           className="inline-block bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-opacity-80 transition duration-300"
           initial={{ scale: 0.8, opacity: 0 }}
@@ -46,7 +46,7 @@ const Hero = () => {
 
       {/* Right Side */}
       <motion.div
-        className="w-full md:w-1/2 flex justify-center items-center relative mt-10 md:mt-0"
+        className="w-full md:w-1/2 flex justify-center items-center relative mt-4 md:mt-0 sm:mt-0 "
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}

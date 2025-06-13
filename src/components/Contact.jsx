@@ -25,7 +25,7 @@ const Contact = () => {
         setShowIcon(entry.isIntersecting);
         if (!entry.isIntersecting) setShowWhatsApp(false);
       },
-      { threshold: 0.8 } // 80% of section should be visible to trigger
+      { threshold: 0.4 } // 80% of section should be visible to trigger
     );
 
     const section = document.getElementById("contact");
