@@ -26,8 +26,8 @@ const Navbar = () => {
   const navItems = ["Home", "About", "Projects", "Skills", "Contact"];
 
   return (
-    <nav className="fixed top-2 left-1/2 transform  -translate-x-1/2 z-50 py-4 px-4 w-3/4 sm:w-1/2 overflow-hidden">
-      <ul className="flex flex-wrap sm:flex-nowrap gap-4 sm:gap-6 justify-center items-center text-black font-semibold text-sm sm:text-base">
+    <nav className="fixed top-2 left-1/2 transform text-xl -translate-x-1/2 z-50 py-4 px-4 w-3/4 sm:w-1/2 overflow-hidden">
+      <ul className="flex flex-wrap sm:flex-nowrap gap-4 sm:gap-6 justify-center items-center text-black font-semibold text-xl sm:text-base">
         {navItems.map((item) => (
           <li key={item} className="relative group">
             <a

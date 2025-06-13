@@ -100,8 +100,8 @@ const Projects = () => {
 
               {/* Content */}
               <div className="p-4">
-                <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
-                <p className="text-gray-700 font-semibold text-m opacity-0 overflow-hidden group-hover:opacity-100 group-hover:mt-2 transition-all duration-500 ease-in-out">
+                <h3 className="text-2xl font-bold ">{project.name}</h3>
+                <p className="text-gray-700 font-semibold text-lg opacity-0 overflow-hidden group-hover:opacity-100 group-hover:mt-1 transition-all duration-500 ease-in-out">
                   {project.description}
                 </p>
               </div>
