@@ -50,7 +50,7 @@ const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#99b4c8] py-20 relative overflow-hidden">
+    <div className="min-h-screen bg-[#99b4c8] text-black py-20 relative overflow-hidden">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}

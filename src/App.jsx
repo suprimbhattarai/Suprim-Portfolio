@@ -19,8 +19,8 @@ function App() {
   if (loading) return <Loader />;
 
   return (
-    <div className="overflow-x-hidden">
-      <div className="snap-y snap-mandatory h-screen overflow-x-hidden scroll-smooth">
+    <div className="overflow-x-hidden text-black bg-[#99b4c8]">
+      <div className="snap-y snap-mandatory h-screen overflow-x-hidden text-black bg-[#99b4c8] scroll-smooth">
         <Navbar />
         <div className="snap-start" id="home">
           <Hero />

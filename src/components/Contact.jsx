@@ -58,7 +58,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-[#99b4c8] flex items-center justify-center px-4 py-12 relative overflow-hidden"
+      className="min-h-screen bg-[#99b4c8] text-black flex items-center justify-center px-4 py-12 relative overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}

@@ -35,10 +35,10 @@ const Hero = () => {
         <motion.a
           href="https://drive.google.com/file/d/156A3BHOxGn57Ox1TTvK_22ue4nPW0GJI/view?usp=sharing"
           target="_blank"
-          className="inline-block bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-opacity-80 transition duration-300"
-          initial={{ scale: 0.8, opacity: 0 }}
+          className="inline-block px-6 py-2 hover:text-black border-2 border-black rounded-full font-semibold hover:bg-transparent bg-black text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+          initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1.3, duration: 0.5 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
         >
           MY RESUME →
         </motion.a>

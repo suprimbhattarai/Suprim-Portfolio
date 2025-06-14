@@ -4,13 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force light theme globally */
+html {
+  color-scheme: only light;
+  background-color: #99b4c8; /* Your fixed background */
+}
 
-
-html,
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
-
-  /* font-family: 'Inter', sans-serif; Replace with ETNA if installed locally */
+  background-color: #99b4c8; /* Apply again on body just in case */
+  color: black;
   font-family: "Baloo 2", cursive;
 }
