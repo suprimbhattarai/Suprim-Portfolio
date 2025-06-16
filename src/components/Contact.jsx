@@ -114,10 +114,22 @@ const Contact = () => {
             <FaXTwitter />
           </a>
         </div>
+        {/* WhatsApp Section Below Social Icons */}
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <h6 className="text-xl font-semibold">Chat on WhatsApp</h6>
+
+          <a
+            href={`https://wa.me/${whatsappNumber}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" text-green-700 px-5 py-2 rounded-full font-semibold transition"
+          >
+            <FaWhatsapp className="text-4xl hover:text-green-900" />
+          </a>
+        </div>
       </motion.div>
 
       {/* Scroll to top button */}
-      
 
       {/* WhatsApp Icon */}
       {showIcon && (

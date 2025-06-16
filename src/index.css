@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merienda:wght@300..900&family=Outfit:wght@600&family=Schoolbell&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,5 +15,5 @@ body {
   overflow-x: hidden;
   background-color: #99b4c8; /* Apply again on body just in case */
   color: black;
-  font-family: "Baloo 2", cursive;
+  font-family: "Merienda", cursive;
 }

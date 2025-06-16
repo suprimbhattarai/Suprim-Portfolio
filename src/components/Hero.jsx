@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen py-44 bg-[#99b4c8] text-black flex flex-col md:flex-row items-center justify-between px-9 sm:px-20 md:px-14 relative overflow-hidden"
+      className="min-h-screen py-44 font-bold bg-[#99b4c8] text-black flex flex-col md:flex-row items-center justify-between px-9 sm:px-20 md:px-14 relative overflow-hidden"
     >
       {/* Left Side */}
       <motion.div
