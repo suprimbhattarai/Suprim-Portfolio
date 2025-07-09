@@ -10,6 +10,7 @@ import {
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import heroImage from "../assets/skills3.png";
+import bgimg from "../assets/bgone.png";
 
 const iconStyle = "relative group text-5xl md:text-6xl cursor-pointer";
 
@@ -50,12 +51,13 @@ const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#99b4c8] text-black py-20 relative overflow-hidden">
+    <div className="min-h-screen bg-[#dcdcdc]  py-20 relative overflow-hidden"  >
+      
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        className="text-5xl md:text-6xl font-bold text-black text-center mb-16"
+        className="text-5xl md:text-6xl font-bold  text-center mb-16"
       >
         Skills
       </motion.h1>

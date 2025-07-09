@@ -1,13 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import myPhoto from "../assets/myPhoto3.png";
+import myPhoto from "../assets/photo college.png";
+import bgimg from "../assets/bgone.png";
 import ScrollTopButton from "./ScrollTopButton";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-[#99b4c8] text-black px-8 py-14 flex items-center overflow-hidden"
+      className="min-h-screen bg-[#dcdcdc] text-black px-8 py-14 flex items-center overflow-hidden"
     >
       <div className="grid md:grid-cols-2 gap-24 max-w-6xl mx-auto items-center w-full">
         {/* Text Block */}

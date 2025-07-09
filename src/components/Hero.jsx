@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "../assets/suprimlogo1.png";
+import logo from "../assets/suprimlogo.png";
 import { motion } from "framer-motion";
+import bgimg from "../assets/bgone.png";
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen py-44 font-bold bg-[#99b4c8] text-black flex flex-col md:flex-row items-center justify-between px-9 sm:px-20 md:px-14 relative overflow-hidden"
+      className="min-h-screen py-44 font-bold text-gray-800 flex flex-col md:flex-row items-center justify-between px-9 sm:px-20 md:px-14 relative overflow-hidden bg-cover bg-center"
     >
       {/* Left Side */}
       <motion.div
@@ -51,22 +52,17 @@ const Hero = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
       >
-        <div className="absolute w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full bg-white opacity-20 z-0" />
-        <div className="absolute w-44 h-44 z-0 rotate-45">
-          <div className="absolute bg-black h-[16px] w-full top-1/2 -translate-y-1/2" />
-          <div className="absolute bg-black w-[16px] h-full left-1/2 -translate-x-1/2" />
-        </div>
         <motion.img
           src={logo}
           alt="Suprim Logo"
-          className="relative z-10 cursor-pointer w-60 sm:w-72 md:w-80 object-contain drop-shadow-xl transition-transform duration-500 hover:scale-110"
+          className="relative  z-10 cursor-pointer w-60 sm:w-72 md:w-80 opacity-75 transition-transform duration-500 hover:scale-110"
           whileHover={{ scale: 1.1, rotate: 1, duration: 0.1 }}
         />
       </motion.div>
 
       {/* Scroll Down */}
-      <div className="hidden sm:block absolute right-2 bottom-8 text-xs tracking-widest rotate-90 font-bold text-black z-20">
-        SCROLL DOWN
+      <div className="hidden sm:block absolute right-2 bottom-15 text-xs tracking-widest rotate-90 font-bold text-black z-20">
+        SCROLL DOWN →
       </div>
     </section>
   );

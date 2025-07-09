@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import ScrollTopButton from "./components/ScrollTopButton";
+import bgimg from "./assets/bgone.png";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,8 +20,8 @@ function App() {
   if (loading) return <Loader />;
 
   return (
-    <div className="overflow-x-hidden text-black bg-[#99b4c8]">
-      <div className="snap-y snap-mandatory h-screen overflow-x-hidden text-black bg-[#99b4c8] scroll-smooth">
+    <div className="overflow-x-hidden bg-cover bg-center bg-opacity-35 text-gray-800 " style={{ backgroundImage: `url(${bgimg})` }} >
+      <div className="snap-y snap-mandatory h-screen bg-cover bg-center bg-opacity-35 overflow-x-hidden text-gray-800 scroll-smooth"  style={{ backgroundImage: `url(${bgimg})` }} >
         <Navbar />
         <div className="snap-start" id="home">
           <Hero />

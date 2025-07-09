@@ -6,6 +6,7 @@ import ScrollTopButton from "./ScrollTopButton";
 import myPhoto from "../assets/room.png";
 import myPhoto2 from "../assets/eat.png";
 import myPhoto3 from "../assets/eat2.png";
+import bgimg from "../assets/bgone.png";
 
 const projectData = [
   {
@@ -48,7 +49,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-[#99b4c8] text-black px-6 py-20 overflow-hidden"
+      className="min-h-screen text-black px-6 py-20 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
