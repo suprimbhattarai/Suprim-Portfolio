@@ -6,6 +6,7 @@ import ScrollTopButton from "./ScrollTopButton";
 import myPhoto from "../assets/room.png";
 import myPhoto2 from "../assets/eat.png";
 import myPhoto3 from "../assets/eat2.png";
+import myPhoto4 from "../assets/homesphere.png";
 import bgimg from "../assets/bgone.png";
 
 const projectData = [
@@ -21,6 +22,13 @@ const projectData = [
     description:
       "-> A restaurant seat booking system that simplifies dining experiences.",
     link: "https://suprimprojects.carrd.co/",
+  },
+  {
+    name: "Homesphere",
+    images: [myPhoto4],
+    description:
+      "-> A modern platform to book, post, & browse verified tradies — with a secure Pay When Satisfied protection system.",
+    link: "https://www.homesphere.co.nz/",
   },
 ];
 
@@ -62,7 +70,7 @@ const Projects = () => {
           <p className="text-lg">(Basic things I had done)</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-0 md:gap-8 sm:gap-8 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-0 md:gap-8 sm:gap-8 justify-items-center">
           {projectData.map((project, index) => (
             <motion.div
               key={index}
