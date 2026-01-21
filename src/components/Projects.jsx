@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
-import { motion, useMotionValue, animate } from "framer-motion";
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 import ScrollTopButton from "./ScrollTopButton";
 
 import myPhoto from "../assets/room.png";
@@ -47,23 +47,33 @@ const projectData = [
 const Projects = () => {
   const [imageIndexes, setImageIndexes] = useState(projectData.map(() => 0));
 
-  /* 🔥 motion value stores live position */
+  const containerRef = useRef(null);
   const x = useMotionValue(0);
-  const [animation, setAnimation] = useState(null);
+  const isPaused = useRef(false);
+  const speed = 120; // pixels per second (professional constant speed)
 
-  const startAnimation = () => {
-    const controls = animate(x, ["0%", "-100%"], {
-      duration: 25,
-      ease: "linear",
-      repeat: Infinity,
-    });
-    setAnimation(controls);
-  };
+  const totalWidth = useRef(0);
 
   useEffect(() => {
-    startAnimation();
-    return () => animation?.stop();
+    if (containerRef.current) {
+      totalWidth.current = containerRef.current.scrollWidth / 2;
+    }
   }, []);
+
+  // 🔥 TRUE continuous marquee
+  useAnimationFrame((t, delta) => {
+    if (isPaused.current || !totalWidth.current) return;
+
+    const moveBy = (speed * delta) / 1000;
+    let currentX = x.get() - moveBy;
+
+    // seamless wrap
+    if (Math.abs(currentX) >= totalWidth.current) {
+      currentX += totalWidth.current;
+    }
+
+    x.set(currentX);
+  });
 
   const handleNext = (index) => {
     setImageIndexes((prev) =>
@@ -101,55 +111,58 @@ const Projects = () => {
           <p className="text-lg">(Basic things I had done)</p>
         </motion.div>
 
-        {/* 🔁 AUTO SLIDING CONTAINER */}
-        <motion.div
-          className="overflow-hidden"
-          onMouseEnter={() => animation?.stop()}
-          onMouseLeave={startAnimation}
-        >
-          <motion.div className="flex gap-8 w-max" style={{ x }}>
+        {/* 🔁 PROFESSIONAL MARQUEE */}
+        <motion.div className="overflow-hidden rounded-xl">
+          <motion.div
+            ref={containerRef}
+            className="flex rounded-xl gap-8 w-max"
+            style={{ x }}
+          >
             {[...projectData, ...projectData].map((project, index) => (
               <motion.div
                 key={index}
-                whileInView={{ opacity: 1, scale: 0.85 }}
-                initial={{ opacity: 0, scale: 0.85 }}
-                transition={{ duration: 1.2 }}
-                className="relative max-w-md w-[350px] overflow-hidden transform transition-transform duration-300 group cursor-pointer"
+                className="relative rounded-xl max-w-md w-[350px] overflow-hidden group cursor-pointer"
+                onMouseEnter={() => (isPaused.current = true)}
+                onMouseLeave={() => (isPaused.current = false)}
                 onClick={() => window.open(project.link, "_blank")}
               >
-                {/* Image Carousel */}
                 <div className="relative h-60 w-full">
                   <img
                     src={
                       project.images[imageIndexes[index % projectData.length]]
                     }
                     alt={project.name}
-                    className="object-cover w-full rounded-2xl h-full"
+                    className="object-cover w-full rounded-xl h-full"
                   />
+
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       handlePrev(index % projectData.length);
                     }}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white/80"
+                    className="absolute left-2 top-1/2 -translate-y-1/2
+                      bg-white/70 p-2 rounded-full
+                      opacity-0 group-hover:opacity-100 transition"
                   >
                     <BsFillCaretLeftFill />
                   </button>
+
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       handleNext(index % projectData.length);
                     }}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 p-2 rounded-full hover:bg-white/80"
+                    className="absolute right-2 top-1/2 -translate-y-1/2
+                      bg-white/70 p-2 rounded-full
+                      opacity-0 group-hover:opacity-100 transition"
                   >
                     <BsFillCaretRightFill />
                   </button>
                 </div>
 
-                {/* Content */}
                 <div className="p-4">
                   <h3 className="text-2xl font-bold">{project.name}</h3>
-                  <p className="text-gray-700 font-semibold text-lg opacity-0 overflow-hidden group-hover:opacity-100 group-hover:mt-1 transition-all duration-500 ease-in-out">
+                  <p className="text-gray-700 font-semibold text-md mt-2 opacity-0 group-hover:opacity-90 transition">
                     {project.description}
                   </p>
                 </div>
@@ -158,27 +171,27 @@ const Projects = () => {
           </motion.div>
         </motion.div>
 
-        {/* CTA */}
+        <ScrollTopButton />
         <motion.div
-          className="text-center mt-10"
+          className="text-center mt-0"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1 }}
         >
-          <h3 className="text-2xl md:text-2xl font-bold mb-6 text-gray-800">
-            Want to visualize your project here?
-          </h3>
+          {" "}
+          <h3 className="text-2xl font-bold mb-6">
+            {" "}
+            Want to visualize your project here?{" "}
+          </h3>{" "}
           <a
             href="#contact"
-            className="inline-block px-6 py-2 text-black border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+            className="inline-block px-6 py-2 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition"
           >
-            Contact Suprim
-          </a>
+            {" "}
+            Contact Suprim{" "}
+          </a>{" "}
         </motion.div>
       </div>
-
-      {/* 🔝 Scroll To Top */}
-      <ScrollTopButton />
     </section>
   );
 };
