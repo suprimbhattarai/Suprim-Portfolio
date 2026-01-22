@@ -20,7 +20,7 @@ const projectData = [
     images: [clistal1, clistal2, clistal3, clistal4, clistal5],
     description:
       "-> A webapp based Client and Service Portal for financial firm",
-    link: "https://my-clistal-client-and-service-porta.vercel.app/",
+    link: "https://myclistalbysuprim.vercel.app/",
   },
   {
     name: "Homesphere",
