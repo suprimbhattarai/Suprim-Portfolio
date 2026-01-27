@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen py-44 font-bold text-gray-800 flex flex-col md:flex-row items-center justify-between px-9 sm:px-20 md:px-14 relative overflow-hidden bg-cover bg-center"
+      className="min-h-screen py-44 text-gray-800 flex flex-col md:flex-row items-center justify-between px-9 sm:px-20 md:px-14 relative overflow-hidden bg-cover bg-center"
     >
       {/* Left Side */}
       <motion.div
@@ -17,7 +17,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
       >
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
@@ -25,12 +25,12 @@ const Hero = () => {
           HI,
         </motion.h1>
         <motion.p
-          className="text-base sm:text-lg max-w-md sm:max-w-lg"
+          className="text-base sm:text-xl max-w-md sm:max-w-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          I'm <span className="font-semibold">Suprim Bhattarai</span> — wanna be
+          I'm <span className="font-bold">Suprim Bhattarai</span> / wanna be
           IT Professional, trying to be my name.
         </motion.p>
         <motion.a

@@ -26,14 +26,14 @@ const projectData = [
     name: "Homesphere",
     images: [myPhoto4],
     description:
-      "-> A modern platform to book, post, & browse verified tradies — with a secure Pay When Satisfied protection system.",
+      "-> A modern platform to book, post, & browse verified tradies with a secure Pay When Satisfied protection system.",
     link: "https://www.homesphere.co.nz/",
   },
   {
     name: "Roomsewa",
     images: [myPhoto],
     description: "-> A room rental platform connecting landlords and tenants.",
-    link: "https://roomsewa.com.np/rooms-for-rent",
+    link: "https://roomsewa.com.np/",
   },
   {
     name: "Eat Ease",
@@ -108,7 +108,7 @@ const Projects = () => {
           className="text-center mb-12"
         >
           <h2 className="text-5xl font-bold mb-4">Projects</h2>
-          <p className="text-lg">(Basic things I had done)</p>
+          <p className="text-lg font-semibold">(Project I am and was a part of)</p>
         </motion.div>
 
         {/* 🔁 PROFESSIONAL MARQUEE */}
@@ -173,15 +173,15 @@ const Projects = () => {
 
         <ScrollTopButton />
         <motion.div
-          className="text-center mt-0"
+          className="text-center mt-6"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           {" "}
-          <h3 className="text-2xl font-bold mb-6">
+          <h3 className="text-2xl font-bold mb-4">
             {" "}
-            Want to visualize your project here?{" "}
+            You can contact me on{" "}
           </h3>{" "}
           <a
             href="#contact"

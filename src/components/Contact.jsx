@@ -9,7 +9,7 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
-import { FaXTwitter, FaArrowUp, FaWhatsapp } from "react-icons/fa6";
+import { FaXTwitter, FaArrowUp, FaWhatsapp, FaGithub } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import bgimg from "../assets/bgone.png";
 
@@ -26,7 +26,7 @@ const Contact = () => {
         setShowIcon(entry.isIntersecting);
         if (!entry.isIntersecting) setShowWhatsApp(false);
       },
-      { threshold: 0.4 } // 80% of section should be visible to trigger
+      { threshold: 0.4 }, // 80% of section should be visible to trigger
     );
 
     const section = document.getElementById("contact");
@@ -67,9 +67,9 @@ const Contact = () => {
         transition={{ duration: 0.8 }}
         className="text-center max-w-lg w-full"
       >
-        <h2 className="text-4xl font-bold mb-8">Contact Me</h2>
+        <h2 className="text-5xl font-bold mb-8">Contact Me</h2>
 
-        <div className="space-y-4 text-lg mb-10">
+        <div className="space-y-4 font-semibold text-lg mb-10">
           <div className="flex justify-center items-center gap-3">
             <FaEnvelope />
             <span>suprimbhattarai2004@gmail.com</span>
@@ -89,6 +89,7 @@ const Contact = () => {
           <a
             href="https://www.facebook.com/suprimbhattarai10"
             target="_blank"
+            title="Facebook"
             className="hover:text-blue-600 transition"
           >
             <FaFacebook />
@@ -96,6 +97,7 @@ const Contact = () => {
           <a
             href="https://www.instagram.com/suprimbhattarai/"
             target="_blank"
+            title="Instagram"
             className="hover:text-pink-500 transition"
           >
             <FaInstagram />
@@ -103,6 +105,7 @@ const Contact = () => {
           <a
             href="https://www.linkedin.com/in/suprim-bhattarai-494441226/"
             target="_blank"
+            title="LinkedIn"
             className="hover:text-blue-700 transition"
           >
             <FaLinkedin />
@@ -110,9 +113,18 @@ const Contact = () => {
           <a
             href="https://x.com/suprimbhattara1"
             target="_blank"
+            title="X"
             className="hover:text-gray-800 transition"
           >
             <FaXTwitter />
+          </a>
+          <a
+            href="https://github.com/suprimbhattarai"
+            target="_blank"
+            title="GitHub"
+            className="hover:text-gray-800 transition"
+          >
+            <FaGithub />
           </a>
         </div>
         {/* WhatsApp Section Below Social Icons */}

@@ -8,10 +8,29 @@
 html {
   color-scheme: only light; /* Your fixed background */
 }
-
+/* Body text */
 body {
+  font-family: "Inter", sans-serif;
+  color: #111;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Apply again on body just in case */
-  color: black;
-  font-family: "Merienda", cursive;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; /* or 700 for bigger impact */
+  color: #0f1117;
+}
+
+/* Logo / tagline */
+.logo-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: #333;
 }
