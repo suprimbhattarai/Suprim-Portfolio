@@ -7,12 +7,14 @@ import {
   SiTailwindcss,
   SiPostman,
   SiMysql,
+  SiAmazonwebservices,
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import heroImage from "../assets/skills3.png";
 import bgimg from "../assets/bgone.png";
+import { DiDotnet, DiNodejs } from "react-icons/di";
 
-const iconStyle = "relative group text-5xl md:text-6xl cursor-pointer";
+const iconStyle = "relative group text-4xl md:text-6xl cursor-pointer";
 
 const skillsLeft = [
   { icon: <SiCplusplus color="#00599C" />, label: "C/C++" },
@@ -20,14 +22,16 @@ const skillsLeft = [
   { icon: <TbApi color="#FF9900" />, label: "REST APIs" },
   { icon: <SiPostman color="#FF6C37" />, label: "Postman" },
   { icon: <SiMysql color="#00758F" />, label: "MySQL" },
+  { icon: <DiDotnet color="#00758F" />, label: ".NET" },
 ];
 
 const skillsRight = [
   { icon: <FaReact color="#61dafb" />, label: "React JS" },
   { icon: <SiTailwindcss color="#06b6d4" />, label: "Tailwind CSS" },
-  { icon: <FaJs color="#f7df1e" />, label: "JavaScript" },
+  { icon: <DiNodejs color="#448a43" />, label: "Node" },
   { icon: <FaGithub color="#000" />, label: "Git & GitHub" },
   { icon: <FaDatabase color="#4DB33D" />, label: "Database" },
+  { icon: <SiAmazonwebservices  />, label: "AWS" },
 ];
 
 // Floating animation
@@ -51,7 +55,7 @@ const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#dcdcdc]  py-20 relative overflow-hidden"  >
+    <div className="min-h-screen bg-[#dcdcdc] py-20 relative overflow-hidden"  >
       
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
@@ -62,9 +66,9 @@ const Skills = () => {
         Skills
       </motion.h1>
 
-      <div className="flex flex-col md:flex-row px-10 justify-between max-w-7xl mx-auto relative z-10 gap-0 md:gap-5">
+      <div className="flex flex-col md:flex-row px-6 justify-between max-w-7xl mx-auto relative z-10 gap-4 md:gap-6">
         {/* LEFT SKILLS */}
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-8 items-start">
           {skillsLeft.map((skill, index) => {
             const id = `left-${index}`;
             return (
@@ -95,7 +99,7 @@ const Skills = () => {
         </div>
 
         {/* RIGHT SKILLS */}
-        <div className="flex flex-col md:flex-row gap-10 items-end">
+        <div className="flex flex-col md:flex-row gap-8 items-end">
           {skillsRight.map((skill, index) => {
             const id = `right-${index}`;
             return (
