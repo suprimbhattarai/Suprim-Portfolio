@@ -1,7 +1,9 @@
 // components/Navbar.jsx
 // ─────────────────────────────────────────────────────────────────────────────
-// Adaptive nav bar. Text and backdrop colour shift with the current section's
-// time-of-day theme. Hidden when on the home hero (shows full-screen hero).
+// Adaptive nav bar. Hidden on home section.
+// Big screens: centered at top.
+// Small screens: burger icon at top-right.
+// Original color theme preserved.
 // ─────────────────────────────────────────────────────────────────────────────
 
 import React, { useState, useEffect } from "react";
@@ -56,30 +58,34 @@ const Navbar = ({ sectionIndex }) => {
 
   useEffect(() => {
     const homeSection = document.getElementById("home");
-    if (!homeSection) return;
+    const scrollContainer = document.getElementById("scroll-container");
+
+    if (!homeSection || !scrollContainer) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsHomeVisible(entry.isIntersecting);
         if (entry.isIntersecting) setMenuOpen(false);
       },
-      { root: document.getElementById("scroll-container"), threshold: 0.5 },
+      { root: scrollContainer, threshold: 0.5 },
     );
 
     observer.observe(homeSection);
     return () => observer.disconnect();
   }, []);
 
-  // Close mobile menu on section change
-  useEffect(() => setMenuOpen(false), [sectionIndex]);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [sectionIndex]);
 
   if (isHomeVisible) return null;
 
   return (
-    <AnimatePresence>
+    <>
+      {/* Desktop / tablet navbar centered */}
       <motion.nav
-        key="navbar"
-        className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 py-3 px-5 rounded-full
+        key="navbar-desktop"
+        className={`hidden sm:block fixed top-5 left-1/2 z-50 -translate-x-1/2 py-3 px-6 rounded-full
           ${theme.backdrop} border border-white/20 shadow-lg`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -87,8 +93,7 @@ const Navbar = ({ sectionIndex }) => {
         transition={{ duration: 0.4 }}
         style={{ minWidth: "max-content" }}
       >
-        {/* Desktop nav */}
-        <ul className="hidden sm:flex gap-7 items-center">
+        <ul className="flex gap-7 items-center">
           {NAV_ITEMS.map((item) => (
             <li key={item} className="relative group">
               <a
@@ -105,10 +110,18 @@ const Navbar = ({ sectionIndex }) => {
             </li>
           ))}
         </ul>
+      </motion.nav>
 
-        {/* Mobile hamburger */}
+      {/* Mobile hamburger at top-right */}
+      <motion.div
+        className="fixed top-5 right-5 z-50 sm:hidden"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4 }}
+      >
         <button
-          className={`sm:hidden flex flex-col gap-1.5 p-1 ${theme.text}`}
+          className={`flex flex-col gap-1.5 p-3 rounded-xl ${theme.backdrop} border border-white/20 shadow-lg ${theme.text}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -125,14 +138,14 @@ const Navbar = ({ sectionIndex }) => {
             animate={{ rotate: menuOpen ? -45 : 0, y: menuOpen ? -8 : 0 }}
           />
         </button>
-      </motion.nav>
+      </motion.div>
 
       {/* Mobile dropdown */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             key="mobile-menu"
-            className="fixed top-20 left-1/2 z-50 -translate-x-1/2 bg-black/70 backdrop-blur-lg
+            className="fixed top-20 right-5 z-50 bg-black/70 backdrop-blur-lg
               rounded-2xl border border-white/20 py-4 px-8 shadow-2xl sm:hidden"
             initial={{ opacity: 0, scale: 0.9, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -157,7 +170,7 @@ const Navbar = ({ sectionIndex }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </AnimatePresence>
+    </>
   );
 };
 

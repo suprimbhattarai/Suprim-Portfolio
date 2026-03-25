@@ -1,9 +1,3 @@
-// App.jsx
-// ─────────────────────────────────────────────────────────────────────────────
-// Root app. Tracks which section is in view (IntersectionObserver)
-// and passes sectionIndex to SkyBackground so the sky + sun update.
-// ─────────────────────────────────────────────────────────────────────────────
-
 import React, { useState, useEffect } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -22,13 +16,11 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [sectionIndex, setSectionIndex] = useState(0);
 
-  // ── Loader ──────────────────────────────────────────────────────────────────
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2800);
     return () => clearTimeout(timer);
   }, []);
 
-  // ── Section observer ────────────────────────────────────────────────────────
   useEffect(() => {
     if (loading) return;
 
@@ -43,7 +35,6 @@ function App() {
           if (entry.isIntersecting) setSectionIndex(index);
         },
         {
-          // Use the snap scroll container as root so thresholds are relative to it
           root: document.getElementById("scroll-container"),
           threshold: 0.45,
         },
@@ -60,13 +51,11 @@ function App() {
 
   return (
     <div className="relative overflow-x-hidden">
-      {/* ── Fixed sky sits behind everything at z-0 ─────────────────────── */}
       <SkyBackground sectionIndex={sectionIndex} />
 
-      {/* ── Scrollable content container ────────────────────────────────── */}
       <div
         id="scroll-container"
-        className="relative z-10 snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth overflow-x-hidden"
+        className="relative z-10 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scroll-smooth"
       >
         <Navbar sectionIndex={sectionIndex} />
 

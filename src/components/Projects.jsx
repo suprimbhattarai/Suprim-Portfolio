@@ -14,6 +14,7 @@ import myPhoto from "../assets/room.png";
 import myPhoto2 from "../assets/eat.png";
 import myPhoto3 from "../assets/eat2.png";
 import myPhoto4 from "../assets/homesphere.png";
+import myPhoto5 from "../assets/homesphere1.png";
 import clistal1 from "../assets/myclistal1.png";
 import clistal2 from "../assets/myclistal2.png";
 import clistal3 from "../assets/myclistal3.png";
@@ -26,22 +27,22 @@ const PROJECT_DATA = [
     images: [clistal1, clistal2, clistal3, clistal4, clistal5],
     description: "A webapp-based Client & Service Portal for a financial firm.",
     link: "https://myclistalbysuprim.vercel.app/",
-    year: "2024",
+    year: "2025",
   },
   {
     name: "Homesphere",
-    images: [myPhoto4],
+    images: [myPhoto4,myPhoto5],
     description:
       "A modern platform to book, post & browse verified tradies with a Pay-When-Satisfied system.",
     link: "https://www.homesphere.co.nz/",
-    year: "2024",
+    year: "2025",
   },
   {
     name: "Roomsewa",
     images: [myPhoto],
     description: "A room-rental platform connecting landlords and tenants.",
     link: "https://roomsewa.com.np/",
-    year: "2023",
+    year: "2024",
   },
   {
     name: "Eat Ease",
@@ -49,7 +50,7 @@ const PROJECT_DATA = [
     description:
       "A restaurant seat-booking system that simplifies dining experiences.",
     link: "https://suprimprojects.carrd.co/",
-    year: "2023",
+    year: "2024",
   },
 ];
 
