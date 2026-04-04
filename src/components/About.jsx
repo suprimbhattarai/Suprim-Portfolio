@@ -6,7 +6,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import myPhoto from "../assets/myPhoto1.png";
+import myPhoto from "../assets/profilepic.png";
 import ScrollTopButton from "./ScrollTopButton";
 
 const TAGS = [
